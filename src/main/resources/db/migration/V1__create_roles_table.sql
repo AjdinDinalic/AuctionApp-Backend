@@ -1,0 +1,4 @@
+CREATE TABLE "roles" (
+    "id" INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    "role_name" varchar(50) NOT NULL UNIQUE
+);
