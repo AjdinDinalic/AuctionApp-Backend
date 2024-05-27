@@ -3,7 +3,6 @@ CREATE TABLE "items" (
     "category_id" INT NOT NULL ,
     "seller_id" INT NOT NULL ,
     "item_status_id" INT NOT NULL ,
-    "highest_bid_id" INT,
     "title" varchar(100) NOT NULL ,
     "description" text NOT NULL ,
     "starting_price" FLOAT NOT NULL ,
@@ -12,6 +11,5 @@ CREATE TABLE "items" (
     "finish_date" date,
     CONSTRAINT "fk_seller" FOREIGN KEY ("seller_id") REFERENCES "users" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
     CONSTRAINT "fk_category" FOREIGN KEY ("category_id") REFERENCES "categories" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
-    CONSTRAINT "fk_status" FOREIGN KEY ("item_status_id") REFERENCES "item_status" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
-    CONSTRAINT "fk_highest_bid" FOREIGN KEY ("highest_bid_id") REFERENCES "bids" ("id") ON DELETE SET NULL ON UPDATE CASCADE DEFERRABLE INITIALLY DEFERRED
+    CONSTRAINT "fk_status" FOREIGN KEY ("item_status_id") REFERENCES "item_status" ("id") ON DELETE SET NULL ON UPDATE CASCADE
 )
